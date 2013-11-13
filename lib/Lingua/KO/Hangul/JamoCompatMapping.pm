@@ -2,28 +2,11 @@ use strict;
 use warnings;
 package Lingua::KO::Hangul::JamoCompatMapping;
 {
-  $Lingua::KO::Hangul::JamoCompatMapping::VERSION = '0.001';
+  $Lingua::KO::Hangul::JamoCompatMapping::VERSION = '0.002';
 }
 
 # ABSTRACT: provide a function that maps Hangul Jamo into Hangul Compatibility code
 
-=pod
-
-=head1 SYNOPSIS
-
-    use Lingua::KO::Hangul::JamoCompatMapping qw/jamo_to_compat/;
-
-    # HANGUL CHOSEONG KIYEOK (\x{1100}) => HANGUL LETTER KIYEOK (\x{3131})
-    $letter = jamo_to_compat("\x{1100}");
-    # HANGUL JONGSEONG KIYEOK (\x{11A8}) => HANGUL LETTER KIYEOK (\x{3131})
-    $letter = jamo_to_compat("\x{11A8}");
-
-=head1 DESCRIPTION
-
-Function B<jamo_to_compat()> maps "Hangul Jamo" to "Hangul Compatibility Jamo" and
-returns compatibility jamo code.
-
-=cut
 
 use Exporter;
 our @ISA = qw/Exporter/;
@@ -99,3 +82,44 @@ sub jamo_to_compat {
 }
 
 1;
+
+__END__
+
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+Lingua::KO::Hangul::JamoCompatMapping - provide a function that maps Hangul Jamo into Hangul Compatibility code
+
+=head1 VERSION
+
+version 0.002
+
+=head1 SYNOPSIS
+
+    use Lingua::KO::Hangul::JamoCompatMapping qw/jamo_to_compat/;
+
+    # HANGUL CHOSEONG KIYEOK (\x{1100}) => HANGUL LETTER KIYEOK (\x{3131})
+    $letter = jamo_to_compat("\x{1100}");
+    # HANGUL JONGSEONG KIYEOK (\x{11A8}) => HANGUL LETTER KIYEOK (\x{3131})
+    $letter = jamo_to_compat("\x{11A8}");
+
+=head1 DESCRIPTION
+
+Function B<jamo_to_compat()> maps "Hangul Jamo" to "Hangul Compatibility Jamo" and
+returns compatibility jamo code.
+
+=head1 AUTHOR
+
+Geunyoung Park <gypark@gmail.com>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by Geunyoung Park.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut

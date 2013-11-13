@@ -19,4 +19,4 @@ requires:
   warnings: 0
 resources:
   repository: git://github.com/gypark/Lingua-KO-Hangul-JamoCompatMapping.git
-version: 0.001
+version: 0.002
